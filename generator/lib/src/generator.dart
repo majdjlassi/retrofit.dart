@@ -409,7 +409,7 @@ class RetrofitGenerator extends GeneratorForAnnotation<retrofit.RestApi> {
         "\${${k.displayName}${k.type.element?.kind == ElementKind.ENUM ? _hasToJson(k.type) ? '.toJson()' : '.name' : ''}}",
       );
     });
-    return literalString(definePath, raw: true);
+    return literalString(definePath ?? '', raw: true);
   }
 
   Code _generateRequest(MethodElement m, ConstantReader httpMethod) {
